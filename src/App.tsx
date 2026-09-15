@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app-container">
       {/* Background character image */}
-      <img src="/images/site/hero1.png" alt="Hero background" className="hero-bg" />
+      <img src={`${import.meta.env.BASE_URL}images/site/hero1.png`} alt="Hero background" className="hero-bg" />
       
       <Scanner initialCid={cidFromUrl} />
     </div>
