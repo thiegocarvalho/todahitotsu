@@ -11,30 +11,24 @@ export async function resolveIpfsImage(cid: string, onProgress: (msg: string) =>
   const cleanCid = cid.replace('ipfs://', '').trim();
   onProgress(`Starting resolution for CID: ${cleanCid}`);
 
-  const controller = new AbortController();
-
-  const promises = GATEWAYS.map(async (gateway) => {
-    const url = `${gateway}${cleanCid}`;
-    try {
-      onProgress(`Testing gateway: ${gateway}`);
-      const response = await fetch(url, {
-        signal: controller.signal,
-        method: 'HEAD' // use HEAD to check faster without downloading immediately, or just fetch if images are small
-      });
-
-      if (response.ok) {
+  const promises = GATEWAYS.map((gateway) => {
+    return new Promise<string>((resolve, reject) => {
+      const url = `${gateway}${cleanCid}`;
+      const img = new Image();
+      
+      img.onload = () => {
         onProgress(`SUCCESS: Gateway ${gateway} responded first!`);
-        controller.abort(); // Cancel other requests
-        return url;
-      }
-      throw new Error(`Gateway ${gateway} returned ${response.status}`);
-    } catch (err: any) {
-      if (err.name === 'AbortError') {
-        throw err;
-      }
-      onProgress(`FAILED: Gateway ${gateway} error - ${err.message}`);
-      throw err;
-    }
+        resolve(url);
+      };
+      
+      img.onerror = () => {
+        onProgress(`FAILED: Gateway ${gateway} error`);
+        reject(new Error(`Failed to load from ${gateway}`));
+      };
+      
+      onProgress(`Testing gateway: ${gateway}`);
+      img.src = url;
+    });
   });
 
   try {
