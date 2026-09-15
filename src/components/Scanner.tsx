@@ -121,7 +121,7 @@ export default function Scanner({ initialCid }: { initialCid?: string | null }) 
 
       {!resolvedImage && (
         <div className="logo-container">
-          <img src="/images/site/logo-j.png" alt="Toda Hitotsu Logo" className="bottom-logo" />
+          <img src={`${import.meta.env.BASE_URL}images/site/logo-j.png`} alt="Toda Hitotsu Logo" className="bottom-logo" />
         </div>
       )}
 

@@ -1,32 +1,26 @@
-# React + TypeScript + Vite
+# Toda Hitotsu - IPFS Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicativo web para acesso a conteúdos exclusivos do universo *Toda Hitotsu*.
 
-Currently, two official plugins are available:
+## Funcionalidades
+- **Scanner de QR Code:** Acesso direto via câmera do celular aos códigos do livro.
+- **Resolução de IPFS Dinâmica:** Busca concorrente de CIDs no IPFS utilizando múltiplos gateways em tempo real para garantir o carregamento mais rápido possível dos ativos digitais.
+- **Design Imersivo:** Estética tática sci-fi "Scanner Eye" com layout otimizado (Mobile First) para imersão total do leitor na história.
+- **Compatível com Links Diretos:** Aceita leitura automática de parâmetros via URL (`?cid=...`).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias Utilizadas
+- [React.js](https://reactjs.org/)
+- [Vite](https://vitejs.dev/) 
+- [TypeScript](https://www.typescriptlang.org/)
+- Vanilla CSS 
 
-## React Compiler
+## Desenvolvimento Local
+Para rodar o projeto localmente:
+1. Instale as dependências: `npm install`
+2. Inicie o servidor: `npm run dev`
+3. Acesse `http://localhost:5173`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Deploy
+O deploy está automatizado via GitHub Actions. Qualquer novo commit na branch `main` irá gerar e publicar a nova versão da aplicação automaticamente no GitHub Pages:
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+👉 [Acessar a Aplicação](https://thiegocarvalho.github.io/todahitotsu/)
