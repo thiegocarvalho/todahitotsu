@@ -19,7 +19,10 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
+    "canvas": "^3.2.3",
+    "jimp": "^1.6.1",
     "oxlint": "^1.81.0",
+    "qrcode": "^1.5.4",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   }
