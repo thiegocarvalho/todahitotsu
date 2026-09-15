@@ -126,13 +126,11 @@ export default function Scanner({ initialCid }: { initialCid?: string | null }) 
       )}
 
       {resolvedImage && (
-        <div className="result-container">
-          <div className="result-header">CONTEÚDO DESBLOQUEADO</div>
-          <img src={resolvedImage} alt="Conteúdo Exclusivo" className="final-image" />
-
-          <button className="btn-primary" onClick={() => setResolvedImage(null)} style={{ marginTop: '1.5rem', width: '100%', fontSize: '1.2rem', padding: '0.8rem' }}>
-            ESCANEAR OUTRO
+        <div className="fullscreen-image-viewer">
+          <button className="close-button" onClick={startScanner}>
+            &times; FECHAR
           </button>
+          <img src={resolvedImage} alt="Conteúdo Exclusivo" className="fullscreen-image" />
         </div>
       )}
     </div>
