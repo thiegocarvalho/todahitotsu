@@ -6,12 +6,12 @@ function App() {
   const cidFromUrl = queryParams.get('cid');
 
   return (
-    <div className="app-container">
+    <main className="app-container">
       {/* Background character image */}
       <img src={`${import.meta.env.BASE_URL}images/site/hero1.png`} alt="Hero background" className="hero-bg" />
       
       <Scanner initialCid={cidFromUrl} />
-    </div>
+    </main>
   );
 }
 
