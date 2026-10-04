@@ -130,7 +130,7 @@ export default function Scanner({ initialCid }: { initialCid?: string | null }) 
           <button className="close-button" onClick={startScanner}>
             &times; FECHAR
           </button>
-          <img src={resolvedImage} alt="Conteúdo Exclusivo" className="fullscreen-image" />
+          <img src={resolvedImage} alt="Conteúdo Exclusivo" referrerPolicy="no-referrer" className="fullscreen-image" />
         </div>
       )}
     </div>
