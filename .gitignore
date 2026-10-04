@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local assets (not published)
+images/qr-codes/
+images/IPFS/
+.venv/
