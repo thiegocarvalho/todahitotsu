@@ -51,6 +51,8 @@ Todo push na `main` dispara o workflow [deploy.yml](.github/workflows/deploy.yml
 
 Contribuições são bem-vindas. Leia o [CONTRIBUTING.md](CONTRIBUTING.md) antes de abrir um PR.
 
-## Conteúdo do livro
+## Licença
 
-As ilustrações e os textos do livro **não fazem parte deste repositório** e pertencem ao autor. O repositório contém apenas o código do site.
+O código deste repositório é distribuído sob a licença [MIT](LICENSE).
+
+As ilustrações e os textos do livro **não fazem parte deste repositório**, não são cobertos pela licença MIT e pertencem ao autor, com todos os direitos reservados.
